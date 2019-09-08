@@ -11,8 +11,9 @@ using System.Windows.Forms;
 namespace UnidaysChallenge {
     public partial class Form1 : Form {
 
-        List<Item> basket;
-        Shop example = new Shop();
+        Rules pricingRules;
+
+        Shop example;
 
         public Form1() {
             InitializeComponent();
@@ -21,11 +22,13 @@ namespace UnidaysChallenge {
         //Sets up the window
         private void Form1_Load(object sender, EventArgs e) {
 
+            //sets a "Rules" object to be passed into the shop
+            pricingRules = new Rules();
 
+            //creates the shop object with the previously created rules
+            example = new Shop(pricingRules, this);
 
-            //Sets up the basket to be used
-            basket = new List<Item>();
-
+            //sets up what products will be sold in the shop
             Inventory.Setup();
 
             //Writes out the instructions
@@ -35,54 +38,64 @@ namespace UnidaysChallenge {
 
         //Adds the selected items to the basket (button clicks)
         private void addItemA_btn_Click(object sender, EventArgs e) {
-            AddToBasket(Inventory.itemA);
+            example.AddToBasket(Inventory.itemA);
         }
         private void addItemB_btn_Click(object sender, EventArgs e) {
-            AddToBasket(Inventory.itemB);
+            example.AddToBasket(Inventory.itemB);
         }
         private void addItemC_btn_Click(object sender, EventArgs e) {
-            AddToBasket(Inventory.itemC);
+            example.AddToBasket(Inventory.itemC);
         }
         private void addItemD_btn_Click(object sender, EventArgs e) {
-            AddToBasket(Inventory.itemD);
+            example.AddToBasket(Inventory.itemD);
         }
         private void addItemE_btn_Click(object sender, EventArgs e) {
-            AddToBasket(Inventory.itemE);
-        }
-
-        /// <summary>
-        /// Adds the item that was clicked on to the basket
-        /// </summary>
-        /// <param name="toAdd"></param>
-        void AddToBasket(Item toAdd) {
-            basket.Add(toAdd);
-            UpdateBasket();
+            example.AddToBasket(Inventory.itemE);
         }
 
         /// <summary>
         /// Causes the list box to write out all of the items in the basket
         /// </summary>
-        void UpdateBasket() {
+        public void UpdateBasket(List<Item> basket) {
 
             //list boxes are done seperately to keep everything aligned 
             //longer named items would misalign the price section if only one box was used
 
             //resets the list boxes
-            basketNames_listBox.Items.Clear();
-            basketPrices_listBox.Items.Clear();
+            basketNames_box.Items.Clear();
+            basketPrices_box.Items.Clear();
 
             //goes through each item in the basket and writes out its name and price
             foreach (Item i in basket) {
-                basketNames_listBox.Items.Add(i.name);
-                basketPrices_listBox.Items.Add(i.price);
+                basketNames_box.Items.Add(i.name);
+                basketPrices_box.Items.Add("£" + i.price);
             }
-            
-
-
         }
 
-        void CalculateTotalPrice() {
+        /// <summary>
+        /// Causes the total label to show the updated total
+        /// </summary>
+        /// <param name="total"></param>
+        public void UpdateTotal(double total) {
+            total_lbl.Text = "Your total is: £" + total;
+        }
 
+        //sets up the list boxes when an item is selected
+        private void basketNames_box_SelectedIndexChanged(object sender, EventArgs e) {
+            basketPrices_box.SelectedIndex = basketNames_box.SelectedIndex;
+        }
+        private void basketPrices_box_SelectedIndexChanged(object sender, EventArgs e) {
+            basketNames_box.SelectedIndex = basketPrices_box.SelectedIndex;
+        }
+
+        //deals with removing items from the basket
+        private void removeItem_btn_Click(object sender, EventArgs e) {
+
+            //makes sure that an item was selected before removing it
+            if (basketNames_box.SelectedIndex != -1)
+                example.RemoveItem(basketNames_box.SelectedIndex);
+            else
+                MessageBox.Show("Please click on an item to remove first");
         }
     }
 }

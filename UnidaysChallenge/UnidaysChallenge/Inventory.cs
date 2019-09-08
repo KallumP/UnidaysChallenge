@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace UnidaysChallenge {
+
+    /// <summary>
+    /// A struct used to store what will be sold in the shop
+    /// </summary>
     static class Inventory {
 
         public static Item itemA;

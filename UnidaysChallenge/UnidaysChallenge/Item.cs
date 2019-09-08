@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace UnidaysChallenge {
 
     /// <summary>
-    /// Class used to store information about different products in a store
+    /// Struct used to store information about different products in a store
     /// </summary>
-    struct Item {
+    public struct Item {
 
         /// <summary>
         /// The name of the item to be displayed
