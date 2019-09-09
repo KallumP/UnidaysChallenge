@@ -13,9 +13,20 @@ namespace UnidaysChallenge {
     struct Rules {
 
         double totalPrice;
+        Form1 window;
 
-        //goes throught the basket and applies the discounts within this method
-        public double CheckDiscounts(List<Item> basket, double _totalPrice) {
+
+        /// <summary>
+        /// Applies the discounts to the totalPrice
+        /// </summary>
+        /// <param name="basket">The basket to be checked for discounts</param>
+        /// <param name="_totalPrice">The current totalprice</param>
+        /// <param name="_window">An instance of the window</param>
+        /// <returns></returns>
+        public double CheckDiscounts(List<Item> basket, double _totalPrice, Form1 _window) {
+
+            //sets up an instance of the window to give access to window methods
+            window = _window;
 
             //records the total price to be worked with
             totalPrice = _totalPrice;
@@ -50,6 +61,17 @@ namespace UnidaysChallenge {
             CDiscount(cCount);
             DDiscount(dCount);
             EDiscount(eCount);
+
+            //checks to see if there was anything in the basket, or if there was a cost of over £50
+            if (totalPrice != 0 && totalPrice < 50)
+
+                //shows a delivery charge
+                window.UpdateDelivery(true);
+            else
+
+                //shows no delivery charge
+                window.UpdateDelivery(false);
+
 
             return totalPrice;
         }
@@ -116,6 +138,10 @@ namespace UnidaysChallenge {
             totalPrice -= Inventory.itemD.price * dCount / 2;
         }
 
+        /// <summary>
+        /// Calculates the discounts to be applied for the "ItemE"s in the basket
+        /// </summary>
+        /// <param name="eCount">The amount of "ItemE"s in the basket</param>
         void EDiscount(int eCount) {
 
             int remainder;

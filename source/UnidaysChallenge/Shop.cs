@@ -58,7 +58,7 @@ namespace UnidaysChallenge {
                 totalPrice += i.price;
 
             //applies the discounts
-            totalPrice = pricingRules.CheckDiscounts(basket, totalPrice);
+            totalPrice = pricingRules.CheckDiscounts(basket, totalPrice, window);
 
             //redraws the total label
             window.UpdateTotal(totalPrice);

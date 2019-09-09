@@ -32,7 +32,7 @@ namespace UnidaysChallenge {
             Inventory.Setup();
 
             //Writes out the instructions
-            instructions_lbl.Text = "To add an item to your basket, click the respective buttons below." +
+            instructions_lbl.Text = "To add an item to the basket, click the item buttons on the left." +
                 "\n To remove an item from your basket, click on the item in the basket and then click 'Remove'";
         }
 
@@ -80,6 +80,17 @@ namespace UnidaysChallenge {
             total_lbl.Text = "Your total is: £" + total;
         }
 
+        /// <summary>
+        /// Updates the delivery charge lable
+        /// </summary>
+        /// <param name="deliverCharge">True: Delivery charge. False: No delivery charge</param>
+        public void UpdateDelivery(bool deliverCharge) {
+            if (deliverCharge)
+                deliver_lbl.Text = "Delivery: £" + 7;
+            else
+                deliver_lbl.Text = "No charge";
+        }
+        
         //sets up the list boxes when an item is selected
         private void basketNames_box_SelectedIndexChanged(object sender, EventArgs e) {
             basketPrices_box.SelectedIndex = basketNames_box.SelectedIndex;

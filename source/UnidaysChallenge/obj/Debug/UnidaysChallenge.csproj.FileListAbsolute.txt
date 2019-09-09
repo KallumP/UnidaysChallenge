@@ -8,3 +8,13 @@ D:\Documents\Dropbox\Coding\UnidaysChallenge\UnidaysChallenge\UnidaysChallenge\o
 D:\Documents\Dropbox\Coding\UnidaysChallenge\UnidaysChallenge\UnidaysChallenge\obj\Debug\UnidaysChallenge.csproj.CoreCompileInputs.cache
 D:\Documents\Dropbox\Coding\UnidaysChallenge\UnidaysChallenge\UnidaysChallenge\obj\Debug\UnidaysChallenge.exe
 D:\Documents\Dropbox\Coding\UnidaysChallenge\UnidaysChallenge\UnidaysChallenge\obj\Debug\UnidaysChallenge.pdb
+D:\Documents\Dropbox\Coding\UnidaysChallenge\source\UnidaysChallenge\bin\Debug\UnidaysChallenge.exe.config
+D:\Documents\Dropbox\Coding\UnidaysChallenge\source\UnidaysChallenge\bin\Debug\UnidaysChallenge.exe
+D:\Documents\Dropbox\Coding\UnidaysChallenge\source\UnidaysChallenge\bin\Debug\UnidaysChallenge.pdb
+D:\Documents\Dropbox\Coding\UnidaysChallenge\source\UnidaysChallenge\obj\Debug\UnidaysChallenge.csprojAssemblyReference.cache
+D:\Documents\Dropbox\Coding\UnidaysChallenge\source\UnidaysChallenge\obj\Debug\UnidaysChallenge.Form1.resources
+D:\Documents\Dropbox\Coding\UnidaysChallenge\source\UnidaysChallenge\obj\Debug\UnidaysChallenge.Properties.Resources.resources
+D:\Documents\Dropbox\Coding\UnidaysChallenge\source\UnidaysChallenge\obj\Debug\UnidaysChallenge.csproj.GenerateResource.cache
+D:\Documents\Dropbox\Coding\UnidaysChallenge\source\UnidaysChallenge\obj\Debug\UnidaysChallenge.csproj.CoreCompileInputs.cache
+D:\Documents\Dropbox\Coding\UnidaysChallenge\source\UnidaysChallenge\obj\Debug\UnidaysChallenge.exe
+D:\Documents\Dropbox\Coding\UnidaysChallenge\source\UnidaysChallenge\obj\Debug\UnidaysChallenge.pdb

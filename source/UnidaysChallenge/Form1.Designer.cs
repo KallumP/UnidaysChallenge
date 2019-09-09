@@ -36,6 +36,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.removeItem_btn = new System.Windows.Forms.Button();
+            this.deliver_lbl = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // basketNames_box
@@ -43,9 +44,9 @@
             this.basketNames_box.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.basketNames_box.FormattingEnabled = true;
             this.basketNames_box.ItemHeight = 20;
-            this.basketNames_box.Location = new System.Drawing.Point(234, 124);
+            this.basketNames_box.Location = new System.Drawing.Point(202, 124);
             this.basketNames_box.Name = "basketNames_box";
-            this.basketNames_box.Size = new System.Drawing.Size(120, 384);
+            this.basketNames_box.Size = new System.Drawing.Size(120, 364);
             this.basketNames_box.TabIndex = 0;
             this.basketNames_box.SelectedIndexChanged += new System.EventHandler(this.basketNames_box_SelectedIndexChanged);
             // 
@@ -121,7 +122,7 @@
             this.basketPrices_box.ItemHeight = 20;
             this.basketPrices_box.Location = new System.Drawing.Point(360, 124);
             this.basketPrices_box.Name = "basketPrices_box";
-            this.basketPrices_box.Size = new System.Drawing.Size(120, 384);
+            this.basketPrices_box.Size = new System.Drawing.Size(120, 364);
             this.basketPrices_box.TabIndex = 12;
             this.basketPrices_box.SelectedIndexChanged += new System.EventHandler(this.basketPrices_box_SelectedIndexChanged);
             // 
@@ -129,7 +130,7 @@
             // 
             this.total_lbl.AutoSize = true;
             this.total_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.total_lbl.Location = new System.Drawing.Point(293, 519);
+            this.total_lbl.Location = new System.Drawing.Point(198, 495);
             this.total_lbl.Name = "total_lbl";
             this.total_lbl.Size = new System.Drawing.Size(119, 20);
             this.total_lbl.TabIndex = 13;
@@ -139,7 +140,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(235, 101);
+            this.label1.Location = new System.Drawing.Point(203, 101);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(118, 20);
             this.label1.TabIndex = 14;
@@ -166,11 +167,22 @@
             this.removeItem_btn.UseVisualStyleBackColor = true;
             this.removeItem_btn.Click += new System.EventHandler(this.removeItem_btn_Click);
             // 
+            // deliver_lbl
+            // 
+            this.deliver_lbl.AutoSize = true;
+            this.deliver_lbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.deliver_lbl.Location = new System.Drawing.Point(198, 519);
+            this.deliver_lbl.Name = "deliver_lbl";
+            this.deliver_lbl.Size = new System.Drawing.Size(144, 20);
+            this.deliver_lbl.TabIndex = 17;
+            this.deliver_lbl.Text = "No Delivery Charge";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(497, 557);
+            this.Controls.Add(this.deliver_lbl);
             this.Controls.Add(this.removeItem_btn);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -206,6 +218,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button removeItem_btn;
+        private System.Windows.Forms.Label deliver_lbl;
     }
 }
 
